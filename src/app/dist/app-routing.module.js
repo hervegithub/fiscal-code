@@ -14,6 +14,10 @@ var routes = [
     {
         path: "",
         component: content_component_1.ContentComponent
+    },
+    {
+        path: "content",
+        component: content_component_1.ContentComponent
     }
 ];
 var AppRoutingModule = /** @class */ (function () {

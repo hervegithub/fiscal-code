@@ -1,25 +1,32 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      
+
     </div>
   </div>
   <div class="row">
     <div class="col-12 justify-content-center">
       <div class="card">
-        <form>
+        <form [formGroup]= "rForm" (ngSubmit)="onSoumission(rForm.value)">
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
                 <label for="">First name</label>
-                <input type="text" class="form-control form-control-alternative" id="exampleFormControlInput1">
+                <input type="text" class="form-control form-control-alternative"
+                formControlName="firstName">
+              </div>
+              <div *ngIf="!rForm.controls['firstName'].valid && rForm.controls['firstName'].touched" class="alert alert-danger" role="alert">
+                this element is required
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label for="">last name</label>
-                <input type="text" class="form-control form-control-alternative" id="exampleFormControlInput1"
-                 >
+                <input type="text" class="form-control form-control-alternative"
+                formControlName="lastName">
+              </div>
+              <div *ngIf="!rForm.controls['lastName'].valid && rForm.controls['lastName'].touched" class="alert alert-danger" role="alert">
+                this element is required
               </div>
             </div>
           </div>
@@ -27,21 +34,30 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="">Birthday</label>
-                <input type="date" class="form-control form-control-alternative" id="exampleFormControlInput1"
-                 >
+                <input type="date" class="form-control form-control-alternative"
+                formControlName="birthday">
+              </div>
+              <div *ngIf="!rForm.controls['birthday'].valid && rForm.controls['birthday'].touched" class="alert alert-danger" role="alert">
+                this element is required
               </div>
             </div>
             <div class="col-md-6">
               <label for="">Genre</label> <br>
               <div class="custom-control custom-checkbox">
                 <span>
-                  <input class="custom-control-input" id="customCheck1" type="checkbox">
+                  <input class="custom-control-input" id="customCheck1" type="checkbox"
+                  formControlName="genre" value="Female">
                   <label class="custom-control-label" for="customCheck1">Female</label>
                 </span>
                 <span class="ml-5">
-                  <input class="custom-control-input" id="customCheck1" type="checkbox">
-                  <label class="custom-control-label" for="customCheck1">Male</label>
+                  <input class="custom-control-input" id="customCheck2" type="checkbox"
+                  formControlName="genre">
+                  <label class="custom-control-label" for="customCheck2"
+                  value = "Male">Male</label>
                 </span>
+              </div>
+              <div *ngIf="!rForm.controls['genre'].valid && rForm.controls['genre'].touched" class="alert alert-danger" role="alert">
+                this element is required
               </div>
             </div>
           </div>
@@ -49,18 +65,20 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="">Town of Birthday</label>
-                <input type="text" class="form-control form-control-alternative" id="exampleFormControlInput1"
-                 >
+                <input type="text" class="form-control form-control-alternative"
+                 formControlName="place">
+              </div>
+              <div *ngIf="!rForm.controls['place'].valid && rForm.controls['place'].touched" class="alert alert-danger" role="alert">
+                this element is required
               </div>
             </div>
             <div class="col-md-6">
-              <button class="btn btn-info mt-4">Generate code</button>
+              <button type="submit" [disabled]="!rForm.valid" class="btn btn-info mt-4">Generate code</button>
             </div>
           </div>
         </form>
       </div>
-  
+
     </div>
   </div>
 </div>
-  

@@ -17,3 +17,7 @@ svg.material-icons:not(:last-child) {
   margin-top: 30px;
   margin-left: 15%;
 }
+
+.alert {
+  font-size: small;
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Users } from '../modal/user.modal';
 
 
 @Component({
@@ -9,7 +10,24 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ContentComponent implements OnInit {
 
-  constructor() { }
+  rForm:FormGroup;
+  user= new Users();
+
+  constructor(private fb: FormBuilder) {
+    this.user.initUserInfos();
+
+    this.rForm = fb.group({
+      'firstName' : [null, Validators.required],
+      'lastName' : [null, Validators.required],
+      'birthday' : [null, Validators.required],
+      'genre' : [null, Validators.required],
+      'place' : [null, Validators.required],
+    })
+  }
+
+  onSoumission(value){
+
+  }
 
   ngOnInit(): void {
   }
