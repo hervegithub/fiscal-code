@@ -26,7 +26,7 @@ export class ContentComponent implements OnInit {
   }
 
   onSoumission(value){
-
+    console.log(value);
   }
 
   ngOnInit(): void {

@@ -29,7 +29,6 @@
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-
               "src/styles.scss"
             ],
             "scripts": []
@@ -125,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "fiscal-code"
+    }
+  },
+  "defaultProject": "fiscal-code",
+  "cli": {
+    "analytics": "0a391a04-9165-4d8b-8077-c66f9c00bb6d"
+  }
 }
