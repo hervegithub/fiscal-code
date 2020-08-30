@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AlgosService } from './services/algos.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'fiscal-code';
+
+  constructor(private algoService: AlgosService){
+    console.log(this.algoService.getSurnameCode("FO"));
+  }
 }
