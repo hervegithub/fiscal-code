@@ -21,25 +21,9 @@ export class AlgosService {
 
   getSurnameCode(inputString): string {
     let consonna = this.getConsonneOnString(inputString);
-    let code = "";
+    //let code = "";
 
-    if (consonna.length >= 3) {
-      code = consonna.substring(0, 3);
-      console.log('code : '+ code);
-    }else{
-      if (inputString === 2) {
-        console.log("ok code !!");
-        code = consonna + "X";
-        console.log('code : '+ code);
-
-      }
-      if (inputString === 1) {
-        code = consonna + "XX";
-        console.log('code : '+ code);
-
-      }
-    }
-    return code;
+    return consonna;
   }
 
 }
