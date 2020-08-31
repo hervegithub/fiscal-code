@@ -10,6 +10,10 @@ export class AppComponent {
   title = 'fiscal-code';
 
   constructor(private algoService: AlgosService){
-    console.log(this.algoService.getSurnameCode("FO"));
+    let firstNameCode = this.algoService.getFirstNameCode('FO')
+    console.log('firstName: '+firstNameCode);
+    let lastNameCode = this.algoService.getLastNameCode('NA');
+    console.log('LastName: '+lastNameCode);
+    console.log(this.algoService.constituatedateCode("2020-05-10", "f"));
   }
 }
